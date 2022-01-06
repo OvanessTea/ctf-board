@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 
 
@@ -20,7 +20,7 @@ function App() {
       <div className="App">
         <Router>
           <Routes>
-            <Route exact path='/user/' element={<PrivateRoute />}>
+            <Route exact path='/user/' element={<PrivateRoute userState={userState}/>}>
                 <Route exact path='/user/' element={<PrivatePage />}/>
             </Route>
             <Route exact path='/' element={<Homepage/>}/>

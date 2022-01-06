@@ -1,10 +1,5 @@
 import { API_URL_DEVELOP } from "../config";
-import {checkUserLog} from "../application/check-user-log";
 
-
-const formatGetResponse = (res) => {
-    return JSON.stringify(res.keys, null, 2);
-}
 
 async function loginUser(username, password) {
     let data = {
@@ -22,14 +17,12 @@ async function loginUser(username, password) {
     });
     
     if (!res.ok | res.status !== 200) {
-        // userNotLogged();
-        localStorage.setItem("accessToken", "")
-        return (null, null)
+        return null
     }
-    data = await res.json();
-    
-    // userIsLogged();
-    return (data.access_token, data.token_type) 
+    const responseLog = await res.json();
+    console.log('resLog', responseLog);
+
+    return responseLog 
     
 }
 

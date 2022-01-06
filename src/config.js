@@ -1,0 +1,4 @@
+const API_URL_DEVELOP = 'http://0.0.0.0:8080/'
+const API_URL_PRODUCTION = '' 
+
+export {API_URL_DEVELOP, API_URL_PRODUCTION}
